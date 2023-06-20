@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0">
+  <title>Bookshelf Apps</title>
+  <link rel="stylesheet" href="style/style.css">
+</head>
+
+<body>
+  <header class="head_bar">
+    <h1 class="head_bar_title">Bookshelf Apps</h1>
+  </header>
+
+  <main>
+    <!-- popupBox -->
+    <div id="popupBox">
+      <h4>Buku berhasil di<span class="text"></span></h4>
+    </div>
+    
+    <!-- Modal Box -->
+    <div id="modalBox">
+      <div class="background"></div>
+      <div class="show-modal">
+        <div class="modal-box">
+          <div class="container">
+            <h3>Hapus Buku</h3>
+            <p>Anda yakin ingin Hapus buku ?</p>
+            
+            <form class="clear-modal">
+              <input type="submit" class="btn-cancel" value="Cancel"></input>
+              <input type="submit" class="btn-delete" value="Delete"></input>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <img src="assets/img/reading-book.jpg" alt="">
+    <div class="content">
+      <section class="input_section card">
+        <h2>Masukkan Buku Baru</h2>
+        <form id="inputBook">
+          <div class="input">
+            <label for="inputBookTitle">Judul</label>
+            <input id="inputBookTitle" type="text" required placeholder="exm: The Pragmatic Programmer">
+          </div>
+          <div class="input">
+            <label for="inputBookAuthor">Penulis</label>
+            <input id="inputBookAuthor" type="text" required placeholder="exm: Andrew Hunt">
+          </div>
+          <div class="input">
+            <label for="inputBookYear">Tahun</label>
+            <input id="inputBookYear" type="number" required placeholder="exm: 2000" onkeydown="limitNumber(this)" onkeyup="limitNumber(this)">
+          </div>
+          <div class="input_inline">
+            <label for="inputBookIsComplete">Selesai dibaca</label>
+            <input id="inputBookIsComplete" type="checkbox">
+          </div>
+          <button id="bookSubmit" type="submit">Masukkan Buku ke rak <span id="shelfType">Sedang Dibaca</span></button>
+        </form>
+      </section>
+      
+      <section class="output-book">
+        <section class="search_section card">
+          <h2>Cari Buku</h2>
+          <form id="searchBook">
+            <label for="searchBookTitle">Judul</label>
+            <input id="searchBookTitle" type="text" placeholder="Masukkan judul . . .">
+            <button id="searchSubmit" type="submit">Cari</button>
+          </form>
+        </section>
+        
+        <section class="book_shelf card">
+          <h2>Sedang Dibaca</h2>
+          
+          <div id="incompleteBookshelfList" class="book_list">
+          </div>
+        </section>
+        
+        <section class="book_shelf card">
+          <h2>Selesai Dibaca</h2>
+          
+          <div id="completeBookshelfList" class="book_list">
+          </div>
+        </section>
+      </section>
+    </div>
+  </main>
+
+  <script src="js/script.js" type="text/javascript"></script>
+
+</body>
+
+</html>
